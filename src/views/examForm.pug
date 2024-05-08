@@ -1,0 +1,28 @@
+doctype html
+html
+    head
+        title Create New Exam
+        link(rel='stylesheet', href='https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css')
+    body
+        .container
+            h1 Create New Exam
+            form(method='POST', action='/exams')
+                .form-group
+                    label(for='student') Student:
+                    input.form-control(type='text', name='student', id='student', required)
+                .form-group
+                    label(for='group') Group:
+                    input.form-control(type='text', name='group', id='group', required)
+                .form-group
+                    label(for='discipline') Discipline:
+                    input.form-control(type='text', name='discipline', id='discipline', required)
+                .form-group
+                    label(for='ticket') Ticket:
+                    input.form-control(type='number', name='ticket', id='ticket', required)
+                .form-group
+                    label(for='mark') Mark:
+                    input.form-control(type='number', name='mark', id='mark', min='0', max='100', required)
+                .form-group
+                    label(for='teacher') Teacher:
+                    input.form-control(type='text', name='teacher', id='teacher', required)
+                button.btn.btn-primary(type='submit') Create Exam

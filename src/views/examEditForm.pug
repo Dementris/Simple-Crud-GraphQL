@@ -1,0 +1,28 @@
+doctype html
+html
+    head
+        title Edit
+        link(rel='stylesheet', href='https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css')
+    body
+        .container
+            h1 Edit Exam
+            form(method='POST', action=`/exams/edit/${exam._id}`)
+                .form-group
+                    label(for='student') Student:
+                    input.form-control(type='text', name='student', id='student', value=exam.student, required)
+                .form-group
+                    label(for='group') Group:
+                    input.form-control(type='text', name='group', id='group', value=exam.group, required)
+                .form-group
+                    label(for='discipline') Discipline:
+                    input.form-control(type='text', name='discipline', id='discipline', value=exam.discipline, required)
+                .form-group
+                    label(for='ticket') Ticket:
+                    input.form-control(type='number', name='ticket', id='ticket', value=exam.ticket, required)
+                .form-group
+                    label(for='mark') Mark:
+                    input.form-control(type='number', name='mark', id='mark', min='0', max='100', value=exam.mark,  required)
+                .form-group
+                    label(for='teacher') Teacher:
+                    input.form-control(type='text', name='teacher', id='teacher', value=exam.teacher required)
+                button.btn.btn-primary(type='submit') Edit Exam

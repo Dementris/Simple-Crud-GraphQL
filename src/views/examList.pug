@@ -1,0 +1,34 @@
+doctype html
+html
+    head
+        title Exam List
+        link(rel='stylesheet', href='https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css')
+    body
+        .container
+            h1 Exam List
+            a.btn.btn-primary(href='/exams/new') New Exam
+            table.table.table-striped
+                thead
+                    tr
+                        th Student
+                        th Group
+                        th Discipline
+                        th Ticket
+                        th Mark
+                        th Teacher
+                        th Actions
+                tbody
+                    each exam in exams
+                        tr
+                            td= exam.student
+                            td= exam.group
+                            td= exam.discipline
+                            td= exam.ticket
+                            td= exam.mark
+                            td= exam.teacher
+                            td
+                                a.btn.btn-sm.btn-warning(href='/exams/edit/' + exam._id) Edit
+                                form(method='POST', action='/exams/delete/' + exam._id)
+                                    input(type='hidden', name='_method', value='DELETE')
+                                    button.btn.btn-sm.btn-danger(type='submit') Delete
+
